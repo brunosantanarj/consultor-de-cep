@@ -5,8 +5,14 @@
     "module": "commonjs",
     "target": "es2017",
     "lib": ["es2017"],
-    "outDir": ".next/server"
+    "outDir": ".next/server",
+    "paths": {
+      "@components": ["components/"],
+      "@UI": ["UI/"],
+      "@operations": ["operations/"],
+      "@utils": ["utils/"],
+    }
   },
-  "include": ["server/**/*.ts"],
+  "include": ["server/index.ts"],
   "exclude": [".next"]
 }

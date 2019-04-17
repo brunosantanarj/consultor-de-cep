@@ -1,9 +1,23 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
 
-export default () => (
-  <ul>
-    <li><Link href='/a' as='/a'><a>a</a></Link></li>
-    <li><Link href='/b' as='/b'><a>b</a></Link></li>
-  </ul>
-)
+import { GlobalStyle } from '@UI';
+import { SearchCEP, CEPREsult } from '@components';
+
+export default () => {
+  const [ cepInformations, setCepInformations] = React.useState({
+    cep: '',
+    uf: '',
+    localidade: '',
+    logradouro: '',
+  });
+
+  const onInformationsCEP = (cep: any): void => setCepInformations(cep);
+
+  return (
+      <React.Fragment>
+        <GlobalStyle />
+        <SearchCEP informationsCEP={onInformationsCEP} />
+        {cepInformations.cep && <CEPREsult cepData={cepInformations} />}
+      </React.Fragment>
+    );
+}

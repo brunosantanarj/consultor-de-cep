@@ -24,7 +24,13 @@
       "es2015",
       "es2016"
     ],
-    "outDir": ".next"
+    "outDir": ".next",
+    "paths": {
+      "@components": ["components/"],
+      "@UI": ["UI/"],
+      "@operations": ["operations/"],
+      "@utils": ["utils/"],
+    }
   },
   "exclude": [".next", "server/**/*.*"]
 }
